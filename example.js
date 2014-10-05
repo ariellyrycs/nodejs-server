@@ -1,5 +1,5 @@
 
-var server = require('./js-ariel-server.js'),
+var server = require('./server.js'),
     config = {
         port: 8080,
         host: '127.0.0.1',
