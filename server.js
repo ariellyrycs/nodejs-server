@@ -1,8 +1,10 @@
 var http = require('http'),
     url = require('url'),
     fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    extType = require('./ext.js');
 require('./tools.js');
+
 module.exports.runServer = function (config) {
     'use strict';
     var route,
@@ -55,7 +57,7 @@ module.exports.runServer = function (config) {
                 } else {
                    throw 404;
                 }
-            };
+            }
             tmpRoute += '/' + routes[routes.length - 1];
             return tmpRoute;
         },
@@ -69,23 +71,8 @@ module.exports.runServer = function (config) {
         },
 
         _getContentType = function (route) {
-            var ext = path.extname(route),
-            contentType = 'text/html';
-            switch (ext) {
-                case '.json':
-                    contentType = 'application/json';
-                    break;
-                case '.js':
-                    contentType = 'text/javascript';
-                    break;
-                case '.css':
-                    contentType = 'text/css';
-                    break;
-                case '.xml':
-                    contentType = 'text/css';
-                    break;
-            }
-            return contentType;
+            var ext = path.extname(route).slice(1);
+            return extType[ext];
         },
 
         _run = function (req, res) {
