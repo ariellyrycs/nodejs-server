@@ -20,7 +20,7 @@ var server = require('./server.js'),
             }]
         },
         rewrite :'php',
-        defaultRo ute: 'webroot'
+        defaultRoute: 'webroot'
 };
 server.runServer(config);
 ```

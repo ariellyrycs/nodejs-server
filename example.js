@@ -1,5 +1,5 @@
 
-var server = require('./server.js'),
+var Server = require('./server.js'),
     config = {
         port: 8080,
         host: '127.0.0.1',
@@ -14,4 +14,5 @@ var server = require('./server.js'),
         rewrite :'php',
         defaultRoute: 'webroot'
 };
-server.runServer(config);
+var server = new Server(config);
+server.start();
