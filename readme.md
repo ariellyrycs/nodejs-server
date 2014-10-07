@@ -22,7 +22,8 @@ var server = require('./server.js'),
         rewrite :'php',
         defaultRoute: 'webroot'
 };
-server.runServer(config);
+var server = new Server(config);
+server.start();
 ```
  - `alias:` changes routes. 
  - `rewrite:` file extension to access to those files. 
