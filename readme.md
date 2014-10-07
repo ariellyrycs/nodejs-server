@@ -7,7 +7,7 @@ This library is to start a server and create every route secure and accurate way
 ##Example
  - Import and implement
 ```
-var server = require('./server.js'),
+var Server = require('./server.js'),
     config = {
         port: 8080,
         host: '127.0.0.1',

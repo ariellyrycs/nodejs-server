@@ -1,5 +1,7 @@
+'use strict';
+
 Object.prototype.clone = function (obj) {
-    if(obj == null || typeof(obj) != 'object'){
+    if(obj === null || typeof(obj) != 'object'){
         return obj;
     }
     var temp = obj.constructor(); // changed

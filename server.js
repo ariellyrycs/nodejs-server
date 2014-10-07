@@ -67,7 +67,7 @@ module.exports = (function () {
             var fileReference,
                 data;
             try {
-                fileReference = fs.openSync(this.route, 'r')
+                fileReference = fs.openSync(this.route, 'r');
             } catch(err) {
                 throw 404;
             }
@@ -97,7 +97,7 @@ module.exports = (function () {
             return tmpRoute;
         },
         _requestExtension: function (fileName) {
-            var matchExtension = new RegExp('(.*?)\.' + this.config.rewrite);
+            var matchExtension = new RegExp('(.*?).' + this.config.rewrite);
             if(matchExtension.test(fileName)) {
                 fileName = fileName.replace(/\.[^\.]+$/, '.json');
             }

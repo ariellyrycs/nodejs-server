@@ -1,6 +1,6 @@
 {
   "name": "simple-nodejs-server",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +14,10 @@
   "bugs": {
     "url": "https://github.com/ariellyrycs/nodejs-server/issues"
   },
-  "homepage": "https://github.com/ariellyrycs/nodejs-server"
+  "homepage": "https://github.com/ariellyrycs/nodejs-server",
+  "devDependencies": {
+    "gulp": "^3.4.0",
+    "gulp-jshint": "^1.8.5",
+    "jshint-stylish": "^1.0.0"
+  }
 }
