@@ -8,7 +8,7 @@ Object.prototype.clone = function (obj) {
 
     for(var key in obj) {
         if(obj.hasOwnProperty(key)) {
-            temp[key] = clone(obj[key]);
+            temp[key] = Object.clone(obj[key]);
         }
     }
     return temp;

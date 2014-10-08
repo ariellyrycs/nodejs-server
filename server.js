@@ -4,7 +4,7 @@ var http = require('http'),
     url = require('url'),
     fs = require('fs'),
     path = require('path'),
-    extType = require('./ext.js');
+    extType = require('./ext.json');
 require('./tools.js');
 
 module.exports = (function () {
@@ -28,8 +28,7 @@ module.exports = (function () {
             try {
                 that.route = that._reRoute(that.route);
                 contentType = that._getContentType(that.route);
-
-                if(contentType === 'application/json'){
+                if(contentType === 'application/json') {
                     values = that._getUrlValue(req);
                     data = require(that.route.replace(/\.[^\.]+$/, '.js')).apply(values);
                 } else {

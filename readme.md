@@ -27,7 +27,7 @@ server.start();
 ```
  - `alias:` changes routes. 
  - `rewrite:` file extension to access to those files. 
- - `alias:` main route
+ - `defaultRoute:` main route
 
 ##Run it:
 ```sh

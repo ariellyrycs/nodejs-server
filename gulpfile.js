@@ -1,19 +1,14 @@
 'use strict';
 
 var gulp = require('gulp'),
-    jshint = require('gulp-jshint'),
+    jsHint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
+    jsHintFile = require('./gulpTools/jshint.js'),
+    watchFile = require('./gulpTools/watch.js'),
     codeFiles = ['./*.js'];
 
-gulp.task('lint', function(){
-    return gulp.src(codeFiles)
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter(stylish));
-});
 
-gulp.task('watch', function(){
-    gulp.watch(codeFiles, function(){
-        gulp.run('lint');
-    });
-});
+jsHintFile(gulp, codeFiles, jsHint, stylish);
+watchFile(gulp, codeFiles);
+
 gulp.task('default', ['lint', 'watch']);
